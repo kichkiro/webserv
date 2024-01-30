@@ -75,7 +75,7 @@
 
 ## ⚖️ - License 
 
-See [LICENSE](https://github.com/kichkiro/42_cursus/blob/main/LICENSE)
+See [LICENSE](https://github.com/kichkiro/webserv/blob/main/LICENSE)
 
 
 ### work in progress ...
