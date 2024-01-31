@@ -118,13 +118,6 @@
 
 [ ] Handle multiple CGI.
 
-## Server -------------------------------------------------------------------->
-
-- Scelta del virtual host:
-  - per prima cosa si controlla l'ip sorgente/porta con la direttiva listen;
-  - si controlla se il name_server corrisponde;
-  - se non corrisponde viene eseguito il virtual host di default;
-
 ## Bugs ---------------------------------------------------------------------->
 
 [ ] il file ".configfile.tmp" non viene eliminato se occorre un eccezione 
