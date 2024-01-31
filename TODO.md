@@ -120,18 +120,17 @@
 
 ## Server -------------------------------------------------------------------->
 
-[ ] Requirements:
-    [ ] 
-    [ ] 
-    [ ] 
-    [ ] 
-    [ ] 
-    [ ] 
+- Scelta del virtual host:
+  - per prima cosa si controlla l'ip sorgente/porta con la direttiva listen;
+  - si controlla se il name_server corrisponde;
+  - se non corrisponde viene eseguito il virtual host di default;
 
+## Bugs ---------------------------------------------------------------------->
 
-
-## Bugs
-
-[ ] il file "temp_config_file.txt" non viene eliminato se occorre un eccezione 
+[ ] il file ".configfile.tmp" non viene eliminato se occorre un eccezione 
     nel frattempo
+
+[ ] i commenti all'interno delle righe non vengono individuati
+
+
 

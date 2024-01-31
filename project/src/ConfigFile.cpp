@@ -6,7 +6,7 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:46:32 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/01/30 16:56:00 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/01/31 11:13:46 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ void ConfigFile::_first_parsing(const char *filename) {
             parsed_content.push_back(line);
     }
     input_file.close();
-    tmp_filename = "temp_config_file.txt";
+    tmp_filename = ".configfile.tmp";
     tmp_file.open(tmp_filename.c_str());
     if (!tmp_file.is_open()) {
         cerr << "webserv: ConfigFile: could not create temporary file" << endl;
+        remove(tmp_filename.c_str());
         throw runtime_error("");
     }
     for (size_t i = 0; i < parsed_content.size(); ++i)
@@ -73,6 +74,7 @@ void ConfigFile::_parsing(const char *config_file) {
     file.open(config_file);
     if (!file.is_open()) {
         cerr << "webserv: ConfigFile: file does not exists" << endl;
+        remove(config_file);
         throw runtime_error("");
     }
     while (getline(file, line)) {
@@ -82,6 +84,7 @@ void ConfigFile::_parsing(const char *config_file) {
         else {
             cerr << "webserv: ConfigFile: \"" << token << 
                 "\" directive does not exists" << endl;
+            remove(config_file);
             throw runtime_error("");
         }
     }

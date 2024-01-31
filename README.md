@@ -67,16 +67,21 @@
 ## 📚 - References
 
 - NGINX
-  - [NGINX - Docs](https://nginx.org/en/docs/)
+  - [NGINX - Official Docs](https://nginx.org/en/docs/)
+  - [NGINX - Request processing](https://nginx.org/en/docs/http/request_processing.html)
 - RFC
   - [9110 - HTTP Semantics](https://www.rfc-editor.org/info/rfc9110)
   - [9111 - HTTP Caching](https://www.rfc-editor.org/info/rfc9111)
   - [9112 - HTTP/1.1](https://www.rfc-editor.org/info/rfc9112)
+- Guides
+  - [HTTP server from scratch](https://medium.com/from-the-scratch/http-server-what-do-you-need-to-know-to-build-a-simple-http-server-from-scratch-d1ef8945e4fa)
 
 ## ⚖️ - License 
 
 See [LICENSE](https://github.com/kichkiro/webserv/blob/main/LICENSE)
 
+
+<br>
 
 ### work in progress ...
 
