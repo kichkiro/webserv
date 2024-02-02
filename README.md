@@ -75,6 +75,7 @@
   - [9112 - HTTP/1.1](https://www.rfc-editor.org/info/rfc9112)
 - Guides
   - [HTTP server from scratch](https://medium.com/from-the-scratch/http-server-what-do-you-need-to-know-to-build-a-simple-http-server-from-scratch-d1ef8945e4fa)
+  - [Location Block Selection Algorithms](https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms)
 
 ## ⚖️ - License 
 
