@@ -28,6 +28,7 @@ const char *Directive::_directives[] = {
     "alias",
     "index",
     "autoindex",
+    "rewrite",
     NULL
 };
 
@@ -89,6 +90,8 @@ void Directive::router(
         value.push_back(new Index(line, context));
     else if (directive == "autoindex")
         value.push_back(new Autoindex(line, context));
+    else if (directive == "rewrite") 
+        value.push_back(new Rewrite(line, context));
     else
         cerr << "webserv: Directive: <" << directive <<
         "> directive does not exists" << endl;
@@ -432,3 +435,25 @@ Autoindex::Autoindex(string raw_value, string context) {
 }
 
 Autoindex::~Autoindex() {}
+
+// Rewrite -------------------------------------------------------------------->
+
+Rewrite::Rewrite(string context) {
+    vector<string> value;
+
+    if (context != "server" && context != "location") 
+        throw WrongContextExc("Rewrite", "server|location", context);
+    this->_type = "rewrite";
+    this->_is_context = false;
+    this->_value_inline = value;
+}
+
+Rewrite::Rewrite(string raw_value, string context) {
+    if (context != "server" && context != "location") 
+        throw WrongContextExc("Rewrite", "server|location", context);
+    this->_type = "rewrite";
+    this->_is_context = false;
+    this->_parsing_inline(raw_value);
+}
+
+Rewrite::~Rewrite() {}

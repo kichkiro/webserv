@@ -81,22 +81,6 @@ class Directive {
 };
 
 /*!
- * @ref 
-    Docs:       https://nginx.org/en/docs/ngx_core_module.html#include
-    Syntax:	    include file | mask;
-    Default:	—
-    Context:	any
- */
-class Include : public Directive {
-    private:
-        void _parsing(string raw_value, vector<string> &parsed_content);
-        
-    public:
-        Include(string raw_value, vector<string> &parsed_content);
-        ~Include();
-};
-
-/*!
  * @ref
     Docs:       https://nginx.org/en/docs/http/ngx_http_core_module.html#http
     Syntax:	    http { ... }
@@ -263,4 +247,34 @@ class Autoindex : public Directive {
         Autoindex(string context);
         Autoindex(string raw_value, string context);
         ~Autoindex();
+};
+
+/*!
+ * @ref
+    Docs:       https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite
+    Syntax:     rewrite regex replacement [flag];
+    Default:	—
+    Context:	server, location, if
+ */
+class Rewrite : public Directive {
+    public:
+        Rewrite(string context);
+        Rewrite(string raw_value, string context);
+        ~Rewrite();
+};
+
+/*!
+ * @ref 
+    Docs:       https://nginx.org/en/docs/ngx_core_module.html#include
+    Syntax:	    include file | mask;
+    Default:	—
+    Context:	any
+ */
+class Include : public Directive {
+    private:
+        void _parsing(string raw_value, vector<string> &parsed_content);
+        
+    public:
+        Include(string raw_value, vector<string> &parsed_content);
+        ~Include();
 };
