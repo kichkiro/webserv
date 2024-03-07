@@ -91,3 +91,7 @@ void ConfigFile::_parsing(const char *config_file) {
     file.close();
     remove(config_file);
 }
+
+vector<Directive *> ConfigFile::get_config(void) {
+    return this->_config;
+}

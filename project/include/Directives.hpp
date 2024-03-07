@@ -54,6 +54,8 @@ class Directive {
         Directive(void);
         virtual ~Directive();
 
+        string              get_type(void);
+        bool                get_is_context(void);
         vector<string>      get_value_inline(void);
         vector<Directive *> get_value_block(void);
 

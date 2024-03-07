@@ -36,6 +36,14 @@ Directive::Directive(void) {}
 
 Directive::~Directive() {}
 
+string Directive::get_type(void) {
+    return this->_type;
+}
+
+bool Directive::get_is_context(void) {
+    return this->_is_context;
+}
+
 vector<string> Directive::get_value_inline(void) {
     return this->_value_inline;
 }

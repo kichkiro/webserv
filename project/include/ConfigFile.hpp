@@ -51,5 +51,5 @@ class ConfigFile {
         ConfigFile(const char *filename);
         ~ConfigFile(void);
 
-        // vector<Directive> get_config_file(void);
+        vector<Directive *> get_config(void);
 };
