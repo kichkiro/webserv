@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConfigFile.hpp                                     :+:      :+:    :+:   */
+/*   ServerName.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:46:15 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 16:59:55 by kichkiro         ###   ########.fr       */
+/*   Created: 2024/03/09 16:40:54 by kichkiro          #+#    #+#             */
+/*   Updated: 2024/03/09 17:56:10 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-// Libraries ------------------------------------------------------------------>
-
 #include "webserv.h"
 
 // Class ---------------------------------------------------------------------->
 
-class ConfigFile {
-    private:
-        typedef vector<Directive *>::iterator VecDirIt;
-        
-        vector<Directive *> _config;
-
-        void _first_parsing(const char *filename);
-        void _parsing(const char *tmp_file);
-
+/*!
+ * @ref
+    Docs:       https://nginx.org/en/docs/http/ngx_http_core_module.html#server_name
+    Syntax:	    server_name name ...;
+    Default:    server_name "";
+    Context:	server
+ */
+class ServerName : public Directive {
     public:
-        ConfigFile(void);
-        ConfigFile(const char *filename);
-        ~ConfigFile(void);
-
-        vector<Directive *> get_config(void);
+        ServerName(string context);
+        ServerName(string raw_value, string context);
+        ~ServerName();
 };

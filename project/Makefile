@@ -6,7 +6,7 @@
 #    By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 14:53:55 by kichkiro          #+#    #+#              #
-#    Updated: 2024/01/25 12:33:38 by kichkiro         ###   ########.fr        #
+#    Updated: 2024/03/09 18:05:09 by kichkiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,24 @@
 
 NAME        := webserv
 SRCS        := \
-				main.cpp \
-				utils.cpp \
+				Alias.cpp \
+				Autoindex.cpp \
+				ClientMaxBodySize.cpp \
+				ErrorPage.cpp \
+				Http.cpp \
+				Include.cpp \
+				Index.cpp \
+				Listen.cpp \
+				Rewrite.cpp \
+				Root.cpp \
+				Server.cpp \
+				ServerName.cpp \
 				ConfigFile.cpp \
-				Directives.cpp 
-				
+				Directive.cpp \
+				Error.cpp \
+				Log.cpp \
+				main.cpp \
+				utils.cpp 
 SRC_DIR     := src
 SRCS        := $(SRCS:%=$(SRC_DIR)/%)
 BUILD_DIR   := .build

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConfigFile.hpp                                     :+:      :+:    :+:   */
+/*   ClientMaxBodySize.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:46:15 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 16:59:55 by kichkiro         ###   ########.fr       */
+/*   Created: 2024/03/09 16:41:24 by kichkiro          #+#    #+#             */
+/*   Updated: 2024/03/09 17:57:55 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-// Libraries ------------------------------------------------------------------>
-
 #include "webserv.h"
 
 // Class ---------------------------------------------------------------------->
 
-class ConfigFile {
-    private:
-        typedef vector<Directive *>::iterator VecDirIt;
-        
-        vector<Directive *> _config;
-
-        void _first_parsing(const char *filename);
-        void _parsing(const char *tmp_file);
-
+/*!
+ * @ref
+    Docs:       https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size
+    Syntax:	    client_max_body_size size;
+    Default:	client_max_body_size 1m;
+    Context:	http, server, location
+ */
+class ClientMaxBodySize : public Directive {
     public:
-        ConfigFile(void);
-        ConfigFile(const char *filename);
-        ~ConfigFile(void);
-
-        vector<Directive *> get_config(void);
+        ClientMaxBodySize(string context);
+        ClientMaxBodySize(string raw_value, string context);
+        ~ClientMaxBodySize();
 };
