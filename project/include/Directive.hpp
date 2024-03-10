@@ -6,7 +6,7 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:59:36 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 18:11:19 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:57:34 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,12 @@ class Directive {
         Directive(void);
         virtual ~Directive();
 
-        string              get_type(void);
-        bool                get_is_context(void);
-        vector<string>      get_value_inline(void);
-        vector<Directive *> get_value_block(void);
+        string              get_type(void) const;
+        bool                get_is_context(void) const;
+        vector<string>      get_value_inline(void) const;
+        vector<Directive *> get_value_block(void) const;
+        size_t              get_block_size(void) const;
+        size_t              get_inline_size(void) const;
 
         static const char *_directives[];
 

@@ -6,7 +6,7 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:16:59 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 12:45:38 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/03/10 19:09:06 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ErrorCodes Error::checkError(int ret, ErrorCodes exit) {
 * @param server The server to close
 * @return The exit status of the weberver
 */
-int Error::exit(ErrorCodes exit, Server &server) {
+int Error::exit(ErrorCodes exit, Socket &server) {
 	server.close();
 	return (exit);
 }

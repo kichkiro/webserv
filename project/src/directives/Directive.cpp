@@ -6,7 +6,7 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:15:39 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 18:02:47 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:57:51 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,28 @@ Directive::Directive(void) {}
 
 Directive::~Directive() {}
 
-string Directive::get_type(void) {
+string Directive::get_type(void) const {
     return this->_type;
 }
 
-bool Directive::get_is_context(void) {
+bool Directive::get_is_context(void) const {
     return this->_is_context;
 }
 
-vector<string> Directive::get_value_inline(void) {
+vector<string> Directive::get_value_inline(void) const {
     return this->_value_inline;
 }
 
-vector<Directive *> Directive::get_value_block(void) {
+vector<Directive *> Directive::get_value_block(void) const {
     return this->_value_block;
+}
+
+size_t Directive::get_block_size(void) const {
+    return this->_value_block.size();
+}
+
+size_t Directive::get_inline_size(void) const {
+    return this->_value_inline.size();
 }
 
 /*!

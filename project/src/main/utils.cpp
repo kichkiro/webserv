@@ -6,11 +6,19 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:41:56 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/01/25 12:33:27 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:25:59 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
+
+bool int_in_vec(const vector<int> &vec, int target) {
+    for (size_t i = 0; i < vec.size(); ++i) {
+        if (vec[i] == target)
+            return true;
+    }
+    return false;
+}
 
 bool str_in_array(const char *str, const char **arr) {
     for (size_t i = 0; arr[i]; ++i) {
@@ -36,7 +44,7 @@ string first_token(const string &str) {
 
 string second_token(const string &str) {
     size_t i;
-    
+
     i = first_token(str).length();
     while (str[i] == 32 || str[i] == 9)
         i++;

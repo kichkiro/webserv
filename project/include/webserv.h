@@ -6,7 +6,7 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 09:51:48 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 18:06:32 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/03/10 14:19:26 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@
 #include <string>
 #include <sstream>
 #include <cstdio>
-
-#include <sys/wait.h>
+#include <cstring>
 #include <cstdlib>
+
+#include <arpa/inet.h>
+#include <poll.h>
+#include <sys/wait.h>
 #include <dirent.h>
 #include <sys/socket.h>
 #include <sys/types.h>

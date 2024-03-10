@@ -6,13 +6,16 @@
 /*   By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:24:50 by kichkiro          #+#    #+#             */
-/*   Updated: 2024/03/09 17:56:30 by kichkiro         ###   ########.fr       */
+/*   Updated: 2024/03/10 19:08:35 by kichkiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "webserv.h"
+// #include "Socket.hpp"
+
+// class Socket;
 
 // Class ---------------------------------------------------------------------->
 
@@ -24,6 +27,12 @@
     Context:	main
  */
 class Http : public Directive {
+    private:
+        void _init_sockets(int server_sockets[], struct pollfd fds[], int &num_fds, int number_of_ports, vector<int> ports);
+        void _handle_polling(int server_sockets[], struct pollfd fds[], int num_fds);
+
+        vector<int> _get_ports(void);
+
     public:
         Http(string context);
         Http(ifstream &raw_value, string context);

@@ -6,7 +6,7 @@
 #    By: kichkiro <kichkiro@student.42firenze.it    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 14:53:55 by kichkiro          #+#    #+#              #
-#    Updated: 2024/03/09 18:05:09 by kichkiro         ###   ########.fr        #
+#    Updated: 2024/03/10 19:09:24 by kichkiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,24 +14,24 @@
 
 NAME        := webserv
 SRCS        := \
-				Alias.cpp \
-				Autoindex.cpp \
-				ClientMaxBodySize.cpp \
-				ErrorPage.cpp \
-				Http.cpp \
-				Include.cpp \
-				Index.cpp \
-				Listen.cpp \
-				Rewrite.cpp \
-				Root.cpp \
-				Server.cpp \
-				ServerName.cpp \
-				ConfigFile.cpp \
-				Directive.cpp \
-				Error.cpp \
-				Log.cpp \
-				main.cpp \
-				utils.cpp 
+				directives/Alias.cpp \
+				directives/Autoindex.cpp \
+				directives/ClientMaxBodySize.cpp \
+				directives/ErrorPage.cpp \
+				directives/Http.cpp \
+				directives/Include.cpp \
+				directives/Index.cpp \
+				directives/Listen.cpp \
+				directives/Rewrite.cpp \
+				directives/Root.cpp \
+				directives/Server.cpp \
+				directives/ServerName.cpp \
+				directives/Directive.cpp \
+				\
+				config/ConfigFile.cpp \
+				\
+				main/main.cpp \
+				main/utils.cpp 
 SRC_DIR     := src
 SRCS        := $(SRCS:%=$(SRC_DIR)/%)
 BUILD_DIR   := .build
