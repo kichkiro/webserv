@@ -80,9 +80,3 @@
 ## ⚖️ - License 
 
 See [LICENSE](https://github.com/kichkiro/webserv/blob/main/LICENSE)
-
-
-<br>
-
-### work in progress ...
-
